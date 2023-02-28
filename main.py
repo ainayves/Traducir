@@ -5,7 +5,7 @@ from lib.widgets.main_rows import (
 
 
 def main(page: ft.Page):
-
+    page.title = "TRADUCIR"
     origin_lang = ft.TextField(
         label="Entrez votre texte",
         multiline=True,)
