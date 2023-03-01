@@ -26,10 +26,7 @@ def main(page: ft.Page):
         page.update()
         origin_lang.focus()
 
-
     page.add(ft.Container(
-        
- 
             content=ft.Column([
                     ft.Row([
                             row_with_alignment(origin_lang),
@@ -39,8 +36,9 @@ def main(page: ft.Page):
                                 )
                             ],
                             alignment=ft.alignment.center),
-
-                    ft.ElevatedButton("Translate", on_click=translate)]),
+                    
+                    ft.Container(
+                        content=ft.ElevatedButton("Translate", on_click=translate))]),
             )
     )
 
