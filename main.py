@@ -1,39 +1,25 @@
 import flet as ft
 from base import Translating
-from lib.widgets.main_rows import (
-    row_with_alignment)
-
+from lib.widgets.main_rows import row_with_alignment
+from lib.layout.page_props import page_props 
+from lib.layout.page_elements import page_elements
 
 def main(page: ft.Page):
-    page.title = "TRADUCIR"
-    origin_lang = ft.TextField(
-        label="Entrez votre texte",
-        multiline=True,)
 
-    target_lang = ft.TextField(multiline=True)
-    select_lang = ft.Dropdown(
-        label="Choisir une langue",
-        label_style=ft.TextStyle(size=10),
-        width=100,
-        options=[
-            ft.dropdown.Option("French"),
-            ft.dropdown.Option("Malagasy"),
-            ft.dropdown.Option("English"),
-            ft.dropdown.Option("Spanish"),
-            ft.dropdown.Option("Japanese"),
-        ]
-    )
+    """ Initialize the page and elements """
+    page = page_props(page)
+    origin_lang , target_lang , select_lang =  page_elements()
 
-    
+    """ Handle events """
     def translate(e):
 
-        # translation object
+        """  Create Translation object """
 
         traduction_obj = Translating(origin_lang.value, select_lang.value)
         traduction_result =traduction_obj.traducir()
         res = traduction_result.choices[0].text
 
-        # update screen information
+        """ Update screen informations """
 
         origin_lang.value = ""
         target_lang.value = res
@@ -41,16 +27,21 @@ def main(page: ft.Page):
         origin_lang.focus()
 
 
-    page.add(ft.Column([
-        ft.Row([row_with_alignment(origin_lang),
-                row_with_alignment(target_lang),
-                ft.Container(
-                    content=select_lang
-                    )
-                ],
-        alignment=ft.alignment.center
+    page.add(ft.Container(
+        
+ 
+            content=ft.Column([
+                    ft.Row([
+                            row_with_alignment(origin_lang),
+                            row_with_alignment(target_lang),
+                            ft.Container(
+                                content=select_lang
+                                )
+                            ],
+                            alignment=ft.alignment.center),
 
-        ), ft.ElevatedButton("Translate", on_click=translate)])
+                    ft.ElevatedButton("Translate", on_click=translate)]),
+            )
     )
 
 
