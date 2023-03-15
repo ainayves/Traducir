@@ -1,10 +1,10 @@
-import flet as ft
+from flet import *
 from base import Translating
 from lib.widgets.main_rows import row_with_alignment
 from lib.layout.page_elements import page_elements
 
 
-def main(page: ft.Page):
+def main(page: Page):
 
     """ Initialize the page and elements """
     
@@ -30,34 +30,34 @@ def main(page: ft.Page):
 
         page.views.clear()
         page.views.append(
-            ft.View(
+            View(
                     "/",
-                    [   ft.Row([
+                    [   Row([
                                 
-                                ft.Container(expand=2, content=ft.Text(value="Connecté en tant que : Aina")),
-                                ft.Container(expand=3),
-                                ft.Container(expand=1,
-                                content=ft.IconButton(ft.icons.WB_SUNNY_OUTLINED , on_click= lambda _: page.go("/store")))
+                                Container(expand=2, content=Text(value="Connecté en tant que : Aina")),
+                                Container(expand=3),
+                                Container(expand=1,
+                                content=IconButton(icons.WB_SUNNY_OUTLINED , on_click= lambda _: page.go("/store")))
   
                                 ]),
 
-                        ft.Container(
-                            content=ft.Column([
-                            ft.Row([
+                        Container(
+                            content=Column([
+                            Row([
                                     row_with_alignment(origin_lang),
                                     row_with_alignment(target_lang),
-                                    ft.Container(
+                                    Container(
                                         content=select_lang
                                         )
                                     ],
-                                    alignment=ft.alignment.center),
+                                    alignment=alignment.center),
                     
                     
-                            ft.Row([
-                                    ft.Container(expand=3),
-                                    ft.Container(expand=3,
-                                    content=ft.ElevatedButton("Translate", on_click=translate)),
-                                    ft.Container(expand=3)
+                            Row([
+                                    Container(expand=3),
+                                    Container(expand=3,
+                                    content=ElevatedButton("Translate", on_click=translate)),
+                                    Container(expand=3)
                                     ])
                         
                             ]),
@@ -67,11 +67,11 @@ def main(page: ft.Page):
         )
         if page.route == "/store":
                 page.views.append( 
-                    ft.View(
+                    View(
                         "/store",
                         [
-                            ft.AppBar(title=ft.Text("Store"), bgcolor=ft.colors.SURFACE_VARIANT),
-                            ft.ElevatedButton("Go Home", on_click=lambda _: page.go("/")),
+                            AppBar(title=Text("Store"), bgcolor=colors.SURFACE_VARIANT),
+                            ElevatedButton("Go Home", on_click=lambda _: page.go("/")),
                         ],
                     )
                 )    
@@ -87,4 +87,4 @@ def main(page: ft.Page):
     page.go(page.route)
 
 
-ft.app(target=main)
+app(target=main)

@@ -1,23 +1,23 @@
-import flet as ft
+from flet import *
 
 def page_elements():
-    origin_lang = ft.TextField(
+    origin_lang = TextField(
         label="Entrez le texte à traduire",
         multiline=True,)
 
-    target_lang = ft.TextField(multiline=True)
-    select_lang = ft.Dropdown(
+    target_lang = TextField(multiline=True)
+    select_lang = Dropdown(
         label="Choisir une langue",
-        label_style=ft.TextStyle(size=10),
+        label_style=TextStyle(size=10),
         width=100,
         options=[
-            ft.dropdown.Option("French"),
-            ft.dropdown.Option("Malagasy"),
-            ft.dropdown.Option("English"),
-            ft.dropdown.Option("Spanish"),
-            ft.dropdown.Option("Japanese"),
-            ft.dropdown.Option("Deutch"),
-            ft.dropdown.Option("Chinese"),
+            dropdown.Option("French"),
+            dropdown.Option("Malagasy"),
+            dropdown.Option("English"),
+            dropdown.Option("Spanish"),
+            dropdown.Option("Japanese"),
+            dropdown.Option("Deutch"),
+            dropdown.Option("Chinese"),
         ]
     )
 
