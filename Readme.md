@@ -3,7 +3,7 @@
 The idea is :  I would like to use a powerful translator as a desktop app, without going through DEEPL or Google Translate.
 
 It is open-source since it is part of my learning process on Flet. 
-So feel free, to send issues or make comments about improving the project.
+So feel free, to contribute , send issues or make comments about improving the project.
 
 It is using the openai translation APIs (which is very popular now)
 
