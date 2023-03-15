@@ -1,4 +1,4 @@
-## 🇲🇬 TRADUCIR is a translation app based on Flet.
+## 🇲🇬 TRADUCIR is a translation app based on [Flet](https://flet.dev/).
 
 The idea is :  I would like to use a powerful translator as a desktop app, without going through DEEPL or Google Translate.
 
