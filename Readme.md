@@ -10,9 +10,9 @@ It is using the openai translation APIs (which is very popular now)
 ## 🤖 REQUIREMENTS 
 
 Flet requires Python 3.7 or above.
-It is a must to read the Flet requirements here : https://flet.dev/docs/guides/python/getting-started
+It is a must to read the Flet requirements here : [flet_requires](https://flet.dev/docs/guides/python/getting-started)
 
-You also need to register on openai to receive your own api key.
+You also need to register on openai to receive your own api key , here : [api_key](https://platform.openai.com/account/api-keys).
 
 ## 💻 SETUP
 
