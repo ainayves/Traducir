@@ -16,11 +16,18 @@ You also need to register on openai to receive your own api key , here : [api_ke
 
 ## 💻 SETUP
 
+
+```
 pip install -r requirements.txt
+
+```
 
 ## 🚀 Lauch
 
+```
 python main.py
+
+```
 
 
 
